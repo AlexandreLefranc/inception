@@ -2,35 +2,31 @@
 
 ## Setup VM
 
-Used of Alpine Linux VM edition
+Used of Fedora Xfce
 
-- 8 Go should be enough
+- 12 Go should be enough
 - 2 Go RAM
 - 4 CPU ?
 - 64Mo Graphic memory
 - 3D acceleration
 
 ```bash
-setup-alpine
-reboot
-
-setup-desktop and create user alefranc
-apk update
-apk add sudo
-
-visudo : uncomment '%wheel ALL=(ALL:ALL) ALL'
-adduser alefranc wheel
-
-apk add docker docker-cli-compose git
-rc-update add docker
-service docker start
-adduser alefranc docker
-
-apk add virtualbox-guest-additions
-apk add virtualbox-guest-additions-x11
-rc-update add virtualbox-drm-client default
+sudo dnf update
 
 reboot
-login as alefranc
+
+sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
+printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=download.vscodium.com\nbaseurl=https://download.vscodium.com/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg\nmetadata_expire=1h" | sudo tee -a /etc/yum.repos.d/vscodium.repo
+sudo dnf install codium
+
+sudo dnf install dnf-plugins-core
+sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+sudo dnf install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+sudo systemctl enable docker
+sudo groupadd docker && sudo gpasswd -a ${USER} docker
+
+reboot
+
+sudo dnf install git
 ```
 
