@@ -34,3 +34,6 @@ shutdown 0
 
 Take a Snapshot
 
+## Nginx
+
+- https://www.youtube.com/watch?v=SqE5uUbBU78
