@@ -37,3 +37,9 @@ Take a Snapshot
 ## Nginx
 
 - https://www.youtube.com/watch?v=SqE5uUbBU78
+
+## MariaDB
+
+- https://wiki.alpinelinux.org/wiki/MariaDB
+- https://github.com/bianjp/docker-mariadb-alpine
+- https://github.com/yobasystems/alpine-mariadb

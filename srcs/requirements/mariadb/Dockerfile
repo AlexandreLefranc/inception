@@ -1,14 +1,16 @@
 FROM alpine:3.17.0
 
-RUN apk update && apk add mariadb mariadb-client
+RUN apk update && \
+    apk add mariadb mariadb-client
 
-RUN mkdir -p /run/mysqld
-RUN chown mysql:mysql -R /run/mysqld
+COPY ./conf/mariadb-server.cnf /etc/my.cnf.d/mariadb-server.cnf
 
-# RUN mysql_install_db --user=mysql --datadir=/var/lib/mysql
-# RUN chown mysql:mysql -R /var/lib/mysql
+COPY ./script/setup.sql /root/setup.sql
 
-COPY ./scripts/run.sh /root/run.sh
+COPY ./script/run.sh /root/run.sh
 
-CMD ["mysqld", "--user=mysql"]
+ENTRYPOINT ["sh", "/root/run.sh"]
+
+# CMD ["mysqld", "--user=mysql"]
+# CMD ["tail", "-f"]
 

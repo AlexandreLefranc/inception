@@ -2,35 +2,35 @@ version: "3.9"
 name: inception
 
 services:
-  nginx:
-    build: ./requirements/nginx
-    container_name: nginx
-    ports:
-      - 443:443
-    env_file: .env
-    networks:
-    - inception-network
-    volumes:
-      - /home/alefranc/data/wordpress:/var/www/wordpress
-    restart: on-failure
+  # nginx:
+  #   build: ./requirements/nginx
+  #   container_name: nginx
+  #   ports:
+  #     - 443:443
+  #   env_file: .env
+  #   networks:
+  #   - inception-network
+  #   volumes:
+  #     - /home/alefranc/data/wordpress:/var/www/wordpress
+  #   restart: on-failure
   
-  wordpress:
-    build: ./requirements/wordpress
-    container_name: wordpress
-    networks:
-      - inception-network
-    volumes:
-      - /home/alefranc/data/wordpress:/var/www/wordpress
-    restart: on-failure
+  # wordpress:
+  #   build: ./requirements/wordpress
+  #   container_name: wordpress
+  #   networks:
+  #     - inception-network
+  #   volumes:
+  #     - /home/alefranc/data/wordpress:/var/www/wordpress
+  #   restart: on-failure
   
   mariadb:
     build: ./requirements/mariadb
     container_name: mariadb
-    env_file: ./.env
+    env_file: .env
     networks:
       - inception-network
     volumes:
-      - /home/alefranc/data/mariadb:/var/lib/mariadb
+      - /home/alefranc/data/mysql:/var/lib/mysql
 
 networks:
   inception-network:

@@ -3,8 +3,8 @@ all: up
 
 .PHONY: up
 up:
-	mkdir -p /home/alefranc/data/wordpress
-	mkdir -p /home/alefranc/data/mariadb
+	# mkdir -p /home/alefranc/data/wordpress
+	mkdir -p /home/alefranc/data/mysql
 	cd srcs/ && docker compose up -d
 
 .PHONY: down
