@@ -11,4 +11,4 @@ COPY ./script/run.sh /root/run.sh
 
 ENTRYPOINT ["/root/run.sh"]
 
-CMD ["mysqld_safe"]
+CMD ["mysqld"]
