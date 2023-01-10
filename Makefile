@@ -11,6 +11,10 @@ up:
 down:
 	cd srcs/ && docker compose down
 
+.PHONY: build
+build:
+	cd srcs/ && docker compose build
+
 .PHONY: clean
 clean: down
 	docker image rm --force inception-nginx inception-wordpress inception-mariadb
@@ -21,6 +25,10 @@ fclean: down
 	docker image		prune --all --force
 	docker network		prune --force
 	docker volume		prune --force
+
+.PHONY: cleandb
+cleandb:
+	sudo rm -rf /home/alefranc/data/mysql/*
 
 .PHONY: info
 info:

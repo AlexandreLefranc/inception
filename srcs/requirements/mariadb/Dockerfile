@@ -3,14 +3,12 @@ FROM alpine:3.17.0
 RUN apk update && \
     apk add mariadb mariadb-client
 
-COPY ./conf/mariadb-server.cnf /etc/my.cnf.d/mariadb-server.cnf
+COPY ./conf/mariadb-server.cnf /etc/my.cnf
 
-COPY ./script/setup.sql /root/setup.sql
+COPY ./script/setup_sql.sh /root/setup_sql.sh
 
 COPY ./script/run.sh /root/run.sh
 
-ENTRYPOINT ["sh", "/root/run.sh"]
+ENTRYPOINT ["/root/run.sh"]
 
-# CMD ["mysqld", "--user=mysql"]
-# CMD ["tail", "-f"]
-
+CMD ["mysqld_safe"]

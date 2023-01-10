@@ -43,3 +43,5 @@ Take a Snapshot
 - https://wiki.alpinelinux.org/wiki/MariaDB
 - https://github.com/bianjp/docker-mariadb-alpine
 - https://github.com/yobasystems/alpine-mariadb
+- https://stackoverflow.com/questions/24270733/automate-mysql-secure-installation-with-echo-command-via-a-shell-script
+- https://phoenixnap.com/kb/how-to-create-mariadb-user-grant-privileges
