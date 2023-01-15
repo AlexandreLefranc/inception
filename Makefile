@@ -1,19 +1,19 @@
+COMPOSE_FILE = srcs/docker-compose.yml
+
 .PHONY: all
 all: up
 
 .PHONY: up
 up:
-	# mkdir -p /home/alefranc/data/wordpress
-	mkdir -p /home/alefranc/data/mysql
-	cd srcs/ && docker compose up -d
+	docker compose -f ${COMPOSE_FILE} up -d
 
 .PHONY: down
 down:
-	cd srcs/ && docker compose down
+	docker compose -f ${COMPOSE_FILE} down
 
 .PHONY: build
 build:
-	cd srcs/ && docker compose build
+	docker compose -f ${COMPOSE_FILE} build
 
 .PHONY: clean
 clean: down
@@ -42,12 +42,12 @@ re: fclean all
 
 .PHONY: nginx
 nginx:
-	cd srcs/ && docker compose exec nginx /bin/sh
+	docker compose -f ${COMPOSE_FILE} exec nginx /bin/sh
 
 .PHONY: wordpress
 wordpress:
-	cd srcs/ && docker compose exec wordpress /bin/sh
+	docker compose -f ${COMPOSE_FILE} exec wordpress /bin/sh
 
 .PHONY: mariadb
 mariadb:
-	cd srcs/ && docker compose exec mariadb /bin/sh
+	docker compose -f ${COMPOSE_FILE} exec mariadb /bin/sh
