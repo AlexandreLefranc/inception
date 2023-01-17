@@ -28,7 +28,7 @@ fclean: down
 
 .PHONY: cleandb
 cleandb:
-	sudo rm -rf /home/alefranc/data/mysql/*
+	sudo rm -rf /home/alefranc/data/*
 
 .PHONY: info
 info:

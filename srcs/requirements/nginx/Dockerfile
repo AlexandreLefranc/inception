@@ -1,6 +1,6 @@
 FROM alpine:3.17.0
 
-RUN set -x && apk update
+RUN apk update
 RUN apk add nginx
 RUN apk add openssl
 
