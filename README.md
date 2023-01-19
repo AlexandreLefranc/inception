@@ -37,6 +37,7 @@ Take a Snapshot
 ## Nginx
 
 - https://www.youtube.com/watch?v=SqE5uUbBU78
+- https://stackoverflow.com/questions/4252368/nginx-502-bad-gateway/16497957#16497957
 
 ## MariaDB
 
@@ -45,3 +46,10 @@ Take a Snapshot
 - https://github.com/yobasystems/alpine-mariadb
 - https://stackoverflow.com/questions/24270733/automate-mysql-secure-installation-with-echo-command-via-a-shell-script
 - https://phoenixnap.com/kb/how-to-create-mariadb-user-grant-privileges
+- https://stackoverflow.com/questions/12877458/mysql-error-1133-cant-find-any-matching-row-in-the-user-table
+- https://www.tecmint.com/fix-error-1130-hy000-host-not-allowed-to-connect-mysql/
+
+## WordPress
+
+- https://wiki.alpinelinux.org/wiki/WordPress
+- https://developer.wordpress.org/cli/commands/
