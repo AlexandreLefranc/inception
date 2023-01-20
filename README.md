@@ -34,10 +34,19 @@ shutdown 0
 
 Take a Snapshot
 
+## Docker
+
+- https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
+
+## Docker compose
+
+- https://docs.docker.com/compose/compose-file/build/
+
 ## Nginx
 
 - https://www.youtube.com/watch?v=SqE5uUbBU78
 - https://stackoverflow.com/questions/4252368/nginx-502-bad-gateway/16497957#16497957
+- https://stackoverflow.com/questions/44706951/nginx-to-serve-php-files-from-a-different-server
 
 ## MariaDB
 
@@ -53,3 +62,7 @@ Take a Snapshot
 
 - https://wiki.alpinelinux.org/wiki/WordPress
 - https://developer.wordpress.org/cli/commands/
+
+## Mixed
+
+- https://www.linode.com/docs/guides/configure-wordpress-remote-database/

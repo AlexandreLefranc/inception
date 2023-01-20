@@ -14,20 +14,25 @@ else
     
     echo "Configurating WordPress"
     wp config create\
-        --dbname=wordpress\
-        --dbuser=alefranc\
-        --dbpass=password\
+        --dbname=$MYSQL_DB\
+        --dbuser=$MYSQL_USER\
+        --dbpass=$MYSQL_PASSWORD\
         --dbhost=mariadb:3306
 
     echo "Installing WordPress"
     wp core install\
         --url="alefranc.42.fr"\
         --title="Inception"\
-        --admin_user="alefranc"\
-        --admin_password="password"\
-        --admin_email="alefranc@student.42.fr"
+        --admin_user=$WP_USER\
+        --admin_password=$WP_PASSWORD\
+        --admin_email=$WP_EMAIL
 
-    echo "Need to create user ?"
+    echo "Create unprivileged user"
+    wp user create\
+        bob\
+        bob@student.42.fr\
+        --user_pass="bob"
+
 fi
 
 exec "$@"

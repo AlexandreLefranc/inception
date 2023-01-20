@@ -39,7 +39,3 @@ WORKDIR /var/www/wordpress
 ENTRYPOINT ["/root/run.sh"]
 
 CMD ["php-fpm81", "--nodaemonize"]
-
-# mysql -ualefranc -ppassword -h mariadb
-# wp core download
-# wp config create --dbname=wordpress --dbuser=alefranc --dbpass=password --dbhost=mariadb:3306
