@@ -9,7 +9,7 @@ up:
 
 .PHONY: down
 down:
-	docker compose -f ${COMPOSE_FILE} down
+	docker compose -f ${COMPOSE_FILE} down -v
 
 .PHONY: build
 build:
@@ -28,7 +28,9 @@ fclean: down
 
 .PHONY: cleandb
 cleandb:
-	sudo rm -rf /home/alefranc/data/*
+	sudo rm -rf /home/alefranc/data/wordpress/*
+	sudo rm -rf /home/alefranc/data/mysql/*
+
 
 .PHONY: info
 info:

@@ -11,7 +11,7 @@ services:
     networks:
     - inception-network
     volumes:
-      - /home/alefranc/data/wordpress:/var/www/wordpress
+      - wp:/var/www/wordpress
     depends_on:
       - wordpress
     restart: on-failure
@@ -23,7 +23,7 @@ services:
     networks:
       - inception-network
     volumes:
-      - /home/alefranc/data/wordpress:/var/www/wordpress
+      - wp:/var/www/wordpress
     depends_on:
       - mariadb
     restart: on-failure
@@ -35,10 +35,24 @@ services:
     networks:
       - inception-network
     volumes:
-      - /home/alefranc/data/mysql:/var/lib/mysql
+      - mysql:/var/lib/mysql
     restart: on-failure
 
 
 networks:
   inception-network:
     name: inception-network
+
+volumes:
+  wp:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/alefranc/data/wordpress'
+  mysql:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/alefranc/data/wordpress'
