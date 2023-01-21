@@ -25,7 +25,8 @@ services:
     volumes:
       - wp:/var/www/wordpress
     depends_on:
-      - mariadb
+      mariadb:
+        condition: service_healthy
     restart: on-failure
   
   mariadb:
@@ -36,6 +37,11 @@ services:
       - inception-network
     volumes:
       - mysql:/var/lib/mysql
+    healthcheck:
+      test: ['CMD', '/root/healthcheck.sh']
+      interval: 10s
+      timeout: 5s
+      retries: 20
     restart: on-failure
 
 

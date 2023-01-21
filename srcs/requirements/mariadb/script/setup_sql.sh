@@ -2,8 +2,6 @@
 
 # mysql -e "SHOW DATABASES;"
 
-set -x
-
 echo "[i] Cleaning MariaDB"
 mysql -e "DROP DATABASE IF EXISTS test"
 mysql -e "DROP USER ''@'localhost'"

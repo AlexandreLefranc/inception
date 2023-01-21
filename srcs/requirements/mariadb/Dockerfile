@@ -4,10 +4,9 @@ RUN apk update && \
     apk add mariadb mariadb-client
 
 COPY ./conf/mariadb-server.cnf /etc/my.cnf
-
 COPY ./script/setup_sql.sh /root/setup_sql.sh
-
 COPY ./script/run.sh /root/run.sh
+COPY ./script/healthcheck.sh /root/healthcheck.sh
 
 ENTRYPOINT ["/root/run.sh"]
 
