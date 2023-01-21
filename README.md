@@ -34,6 +34,12 @@ shutdown 0
 
 Take a Snapshot
 
+## Dockerhub implementations
+
+- https://github.com/nginxinc/docker-nginx
+- https://github.com/MariaDB/mariadb-docker
+- https://github.com/docker-library/wordpress
+
 ## Docker
 
 - https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
@@ -42,6 +48,7 @@ Take a Snapshot
 
 - https://docs.docker.com/compose/compose-file/build/
 - https://marcopeg.com/docker-compose-healthcheck/
+- https://stackoverflow.com/questions/48776044/docker-healthcheck-for-nginx-container
 
 ## Nginx
 
@@ -67,3 +74,5 @@ Take a Snapshot
 ## Mixed
 
 - https://www.linode.com/docs/guides/configure-wordpress-remote-database/
+- https://medium.com/swlh/wordpress-deployment-with-nginx-php-fpm-and-mariadb-using-docker-compose-55f59e5c1a
+- https://bobcares.com/blog/docker-compose-nginx-php-fpm-mysql-wordpress/
